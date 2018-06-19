@@ -1,0 +1,3 @@
+function (fileName, data)
+  fid = fopen( fileName, 'w' )
+      fprintln(da)
