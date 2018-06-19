@@ -22,7 +22,7 @@ function varargout = mainview(varargin)
 
 % Edit the above text to modify the response to help mainview
 
-% Last Modified by GUIDE v2.5 19-Jun-2018 23:05:17
+% Last Modified by GUIDE v2.5 19-Jun-2018 23:38:29
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -57,6 +57,7 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
+%Init
 axes(handles.axes1)
 matlabImage = imread('img\introduction.JPG');
 image(matlabImage)
@@ -89,3 +90,21 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 %introduction=imread('img\introduction.JPG'); 
 %imshow(introduction)
+axes(handles.axes1)
+matlabImage = imread('img\left.JPG');
+image(matlabImage)
+axis off
+axis image
+set(handles.consolelog, 'String', 'left');
+
+% --- Executes on button press in pushbutton4.
+function pushbutton4_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+axes(handles.axes1)
+matlabImage = imread('img\right.JPG');
+image(matlabImage)
+axis off
+axis image
+set(handles.consolelog, 'String', 'right');
