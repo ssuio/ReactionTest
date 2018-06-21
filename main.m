@@ -7,4 +7,4 @@ axis([0 1 0 1]);
 box on;
 axis off;
 uiRouter(startMenuImg)
-set(gcf, 'WindowButtonDownFcn', 'goToIntro');
+set(gcf, 'WindowButtonDownFcn', @goToIntro);
