@@ -1,4 +1,4 @@
-function varargout = mainview(varargin)
+function varargout = app(varargin)
 % MAINVIEW MATLAB code for mainview.fig
 %      MAINVIEW, by itself, creates a new MAINVIEW or raises the existing
 %      singleton*.
@@ -22,7 +22,7 @@ function varargout = mainview(varargin)
 
 % Edit the above text to modify the response to help mainview
 
-% Last Modified by GUIDE v2.5 19-Jun-2018 23:38:29
+% Last Modified by GUIDE v2.5 20-Jun-2018 09:53:29
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -58,11 +58,13 @@ handles.output = hObject;
 % Update handles structure
 guidata(hObject, handles);
 %Init
-axes(handles.axes1)
-matlabImage = imread('img\introduction.JPG');
+global 
+axes(handles.introduction)
+matlabImage = imread('img\startMenu.PNG');
 image(matlabImage)
 axis off
 axis image
+
 
 % UIWAIT makes mainview wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
@@ -90,7 +92,7 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 %introduction=imread('img\introduction.JPG'); 
 %imshow(introduction)
-axes(handles.axes1)
+axes(handles.introduction)
 matlabImage = imread('img\left.JPG');
 image(matlabImage)
 axis off
@@ -102,7 +104,7 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-axes(handles.axes1)
+axes(handles.introduction)
 matlabImage = imread('img\right.JPG');
 image(matlabImage)
 axis off

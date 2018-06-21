@@ -1,4 +1,10 @@
-function main(fileName, data)
-    fid = fopen( fileName, 'w' );
-    fprintf(fid, join(string(data), ', '));
-    fclose( fid );
+global startMenuImg
+startMenuImg = imread('img\startMenu.PNG');
+global introductionImg
+introductionImg = imread('img\introduction.JPG');
+
+axis([0 1 0 1]);
+box on;
+axis off;
+uiRouter(startMenuImg)
+set(gcf, 'WindowButtonDownFcn', 'goToIntro');
