@@ -1,3 +1,4 @@
+%Declare img/variables/constants
 global startMenuImg
 startMenuImg = imread('img\startMenu.PNG');
 global introductionImg
@@ -20,34 +21,76 @@ global wrongBtnImg
 wrongBtnImg = imread('img\wrongBtn.PNG');
 global dontTypeImg
 dontTypeImg = imread('img\dontType.PNG');
+global correctImg
+correctImg = imread('img\correct.PNG');
 global trialTimes
 trialTimes = [0.05, 0.1, 0.15, 0.2];
 global showTime
-showTime = 0.6;
+showTime = 1;
+global records
+records = [];
 
-q = Quiz;
-init();
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% START
+
+% lauch app
+openApp();
+
+% mouse-click to go to introduction
+waitForMouseClick();
+goToIntro();
+
+% Space to start block1
+waitForSpacePress();
+result = GameHelper.startFirstBlock();
+
+if ~strcmp(result,'pass')
+    % Space to start block2
+    waitForSpacePress();
+    GameHelper.startSecondBlock();
+end
+
+% Write result to result.csv
+writeResult();
+
+% END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function openApp()
 axis([0 1 0 1]);
-box on;
-axis off;
-uiRouter(startMenuImg)
-set(gcf, 'WindowButtonDownFcn', @goToIntro);
-
-function init()
-    
+global startMenuImg
+GameHelper.uiRouter(startMenuImg)
 end
 
-function goToIntro(src,event)
-    % Unbind click event
-    set(gcf, 'WindowButtonDownFcn', []);
-    global introductionImg
-    fprintf('Go to intro!\n')
-    image(introductionImg)
-    set(gcf,'KeyPressFcn',@gameStart);
+function waitForMouseClick()
+next = 1;
+while(next ~= 0)
+    next = waitforbuttonpress;
+end
 end
 
-function t = getTimeGap()
-    global trialTimeArr
-    idx = randperm(length(trialTimeArr),1);
-    t = trialTimeArr(idx);
+function goToIntro()
+global introductionImg;
+GameHelper.uiRouter(introductionImg);
+%set(gcf,'KeyPressFcn',@gameStart);
+end
+
+function waitForSpacePress()
+while true
+    w = waitforbuttonpress;
+    switch w
+        case 1 % (keyboard press)
+            key = get(gcf,'currentcharacter');
+            if key == ' '
+                break;
+            end
+    end
+end
+end
+
+function writeResult()
+global records
+fid = open('result\result.csv');
+fprintf(fid, '%s', join(records));
+fclose(fid);
 end

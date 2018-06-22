@@ -1,0 +1,6 @@
+res = 0;'
+set(gcf,'KeyPressFcn',@gameStart);
+
+function gameStart(src, event)
+    sprintf(event.Key)
+end
