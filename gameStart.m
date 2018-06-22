@@ -27,7 +27,7 @@ function arr = getFirstBlockQiz()
     timeArr = repelem(trialTimes, 10);
     timeArr = shuffle(timeArr);
     for i = 1:40
-        arr(end+1) = Quiz(timeArr(i),randperm(2,1));
+        arr = [arr, Quiz(timeArr(i),randperm(2,1))];
     end
 end
 
