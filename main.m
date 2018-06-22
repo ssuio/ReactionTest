@@ -2,6 +2,8 @@ global startMenuImg
 startMenuImg = imread('img\startMenu.PNG');
 global introductionImg
 introductionImg = imread('img\introduction.JPG');
+global introduction2Img
+introduction2Img = imread('img\introduction2.PNG');
 global thinCrossImg
 thinCrossImg = imread('img\ThinCross.PNG');
 global thickCrossImg
@@ -10,10 +12,19 @@ global goLeftImg
 goLeftImg = imread('img\left.JPG');
 global goRightImg
 goRightImg = imread('img\right.JPG');
+global nonRightImg
+nonRightImg = imread('img\nonRight.PNG');
+global nonLeftImg
+nonLeftImg = imread('img\nonRight.PNG');
+global wrongBtnImg
+wrongBtnImg = imread('img\wrongBtn.PNG');
+global dontTypeImg
+dontTypeImg = imread('img\dontType.PNG');
 global trialTimes
 trialTimes = [0.05, 0.1, 0.15, 0.2];
 global showTime
 showTime = 0.6;
+
 q = Quiz;
 init();
 axis([0 1 0 1]);

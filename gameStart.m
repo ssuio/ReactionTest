@@ -23,7 +23,13 @@ function arr = getFirstBlockQuiz()
 end
 
 function arr = getSecondBlockQuiz()
-    
+    global trialTimes;
+    arr = [];
+    timeArr = repelem(trialTimes, 20);
+    timeArr = shuffle(timeArr);
+    for i = 1:80
+        arr = [arr, Quiz(timeArr(i),randperm(4,1))];
+    end
 end
 
 function arr = shuffle(oldArr)
