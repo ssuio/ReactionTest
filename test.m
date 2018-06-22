@@ -1,25 +1,8 @@
-function gameStart(src,event)
-    if strcmp(event.Key, 'space') == 1
-        image(thinCross);
-    end
-    pause(5)
-    showCross()
-end
+global trialTimes
+trialTimes = [0.05, 0.1, 0.15, 0.2];
 
+getFirstBlockQiz()
 
-
-function showCross()
-    global thickCross;
-    image(thickCross);
-    getTimeGap()
-end
-
-function t = randomPause()
-    global trialTimeArr
-    idx = randperm(length(trialTimeArr),1);
-    t = trialTimeArr(idx);
-    pause(t)
-end
 
 function arr = getFirstBlockQiz()
     global trialTimes;
@@ -29,10 +12,6 @@ function arr = getFirstBlockQiz()
     for i = 1:40
         arr(end+1) = Quiz(timeArr(i),randperm(2,1));
     end
-end
-
-function arr = getSecondBlockQiz()
-    
 end
 
 function arr = shuffle(oldArr)

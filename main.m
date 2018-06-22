@@ -10,9 +10,11 @@ global goLeftImg
 goLeftImg = imread('img\left.JPG');
 global goRightImg
 goRightImg = imread('img\right.JPG');
-global trialTimeArr
-trialTimeArr = [0.05, 0.1, 0.15, 0.2];
-
+global trialTimes
+trialTimes = [0.05, 0.1, 0.15, 0.2];
+global showTime
+showTime = 0.6;
+q = Quiz;
 init();
 axis([0 1 0 1]);
 box on;

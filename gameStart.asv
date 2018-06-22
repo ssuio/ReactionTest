@@ -22,26 +22,14 @@ function t = randomPause()
 end
 
 function arr = getFirstBlockQiz()
-    global trialTimes;
+
     arr = [];
-    timeArr = repelem(trialTimes, 10);
-    timeArr = shuffle(timeArr);
+    timeArr = repelem()
     for i = 1:40
-        arr(end+1) = Quiz(timeArr(i),randperm(2,1));
+        arr(end+1) = Quiz(,randperm(2,1));
     end
 end
 
 function arr = getSecondBlockQiz()
     
-end
-
-function arr = shuffle(oldArr)
-    l = length(oldArr);
-    for i = 1:l
-        rInt = randperm(l, 1);
-        t = oldArr(i);
-        oldArr(i) = oldArr(rInt);
-        oldArr(rInt) = t;
-    end
-    arr = oldArr;
 end

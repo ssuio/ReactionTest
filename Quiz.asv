@@ -1,0 +1,15 @@
+classdef Quiz
+   properties
+      Time
+   end
+   properties
+       Pic
+   end
+   methods
+      function obj = Quiz(time, pic)
+       obj.Time = time;
+       obj.Pic = pic;
+       assignStatus(obj);
+      end
+   end
+end
