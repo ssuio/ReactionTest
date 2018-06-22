@@ -6,22 +6,13 @@ function gameStart(src,event)
     showCross()
 end
 
-
-
 function showCross()
     global thickCross;
     image(thickCross);
     getTimeGap()
 end
 
-function t = randomPause()
-    global trialTimeArr
-    idx = randperm(length(trialTimeArr),1);
-    t = trialTimeArr(idx);
-    pause(t)
-end
-
-function arr = getFirstBlockQiz()
+function arr = getFirstBlockQuiz()
     global trialTimes;
     arr = [];
     timeArr = repelem(trialTimes, 10);
@@ -31,7 +22,7 @@ function arr = getFirstBlockQiz()
     end
 end
 
-function arr = getSecondBlockQiz()
+function arr = getSecondBlockQuiz()
     
 end
 

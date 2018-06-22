@@ -1,10 +1,8 @@
 global trialTimes
 trialTimes = [0.05, 0.1, 0.15, 0.2];
 
-arr = getFirstBlockQiz()
-arr(1)
-arr(2)
-arr(3)
+length(getFirstBlockQiz())
+
 
 
 function arr = getFirstBlockQiz()
