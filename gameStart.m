@@ -1,5 +1,4 @@
 function gameStart(src,event)
-    thinCross = imread('img\ThinCross.PNG');
     if strcmp(event.Key, 'space') == 1
         image(thinCross);
     end
@@ -7,7 +6,17 @@ function gameStart(src,event)
     showCross()
 end
 
+
+
 function showCross()
-    thickCross = imread('img\ThickCross.PNG');
-    image(thickCross)
+    global thickCross;
+    image(thickCross);
+    getTimeGap()
+end
+
+function t = randomPause()
+    global trialTimeArr
+    idx = randperm(length(trialTimeArr),1);
+    t = trialTimeArr(idx);
+    pause(t)
 end

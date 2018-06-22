@@ -2,17 +2,12 @@ global startMenuImg
 startMenuImg = imread('img\startMenu.PNG');
 global introductionImg
 introductionImg = imread('img\introduction.JPG');
-global thinCrossImg
-thinCrossImg = imread('img\ThinCross.PNG');
-global thickCrossImg
-thickCrossImg = imread('img\ThickCross.PNG');
-global goLeftImg
-goLeftImg = imread('img\left.JPG');
-global goRightImg
-goRightImg = imread('img\right.JPG');
+global thinCross
+thinCross = imread('img\ThinCross.PNG');
+global thickCross
+thickCross = imread('img\ThickCross.PNG');
 global trialTimeArr
 trialTimeArr = [0.05, 0.1, 0.15, 0.2];
-
 init();
 axis([0 1 0 1]);
 box on;
