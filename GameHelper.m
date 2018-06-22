@@ -10,6 +10,7 @@ classdef GameHelper
             for i = 1 : length(arr)
                 startQuiz(arr(i), i);
             end
+            showAverageReactTime();
         end
         function arr = startSecondBlock()
             global thinCrossImg
@@ -61,7 +62,7 @@ reactTime = -1;
 
 beforeQuiz();
 tic();
-set(gcf,'KeyPressFcn',@listenKbPress);
+set(gcf,'WindowKeyPressFcn',@listenKbPress);
 pause(quiz.Time);
 showQuiz(qPic);
 pause(showTime)
@@ -72,6 +73,9 @@ GameHelper.record(idx, 1, 1, qPic, quiz.Time, res, reactTime);
 end
 
 function beforeQuiz()
+global thinCrossImg
+GameHelper.uiRouter(thinCrossImg);
+pause(0.6);
 global thickCrossImg
 GameHelper.uiRouter(thickCrossImg);
 end
@@ -112,9 +116,18 @@ if qPic == res
 else
     GameHelper.uiRouter(wrongBtnImg)
 end
-    unBindKbPress();
+blockKbPress();
 end
 
-function unBindKbPress()
-    set(gcf,'KeyPressFcn',[]);
+function blockKbPress()
+set(gcf,'WindowKeyPressFcn',@doNothing);
+end
+
+function doNothing(src, event)
+disp('Prevent focus command window');
+end
+
+function showAverageReactTime()
+    global resultAverageTimeImg
+    GameHelper.uiRouter(resultAverageTimeImg);
 end

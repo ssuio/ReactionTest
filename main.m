@@ -23,10 +23,12 @@ global dontTypeImg
 dontTypeImg = imread('img\dontType.PNG');
 global correctImg
 correctImg = imread('img\correct.PNG');
+global resultAverageTimeImg
+resultAverageTimeImg = imread('img\resultAverageTime.PNG');
 global trialTimes
 trialTimes = [0.05, 0.1, 0.15, 0.2];
 global showTime
-showTime = 1;
+showTime = 0.6;
 global records
 records = [];
 
@@ -44,11 +46,12 @@ goToIntro();
 waitForSpacePress();
 result = GameHelper.startFirstBlock();
 
-if ~strcmp(result,'pass')
+%if ~strcmp(result,'pass')
     % Space to start block2
-    waitForSpacePress();
-    GameHelper.startSecondBlock();
-end
+    %goToIntro2();
+    %waitForSpacePress();
+    %GameHelper.startSecondBlock();
+%end
 
 % Write result to result.csv
 writeResult();
@@ -72,7 +75,11 @@ end
 function goToIntro()
 global introductionImg;
 GameHelper.uiRouter(introductionImg);
-%set(gcf,'KeyPressFcn',@gameStart);
+end
+
+function goToIntro2()
+global introduction2Img;
+GameHelper.uiRouter(introduction2Img);
 end
 
 function waitForSpacePress()
@@ -90,7 +97,7 @@ end
 
 function writeResult()
 global records
-fid = open('result\result.csv');
+fid = fopen('result\result.csv', 'w');
 fprintf(fid, '%s', join(records));
 fclose(fid);
 end
