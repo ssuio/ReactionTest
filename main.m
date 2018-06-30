@@ -1,30 +1,30 @@
 %Declare img/variables/constants
 global startMenuImg
-startMenuImg = imread('img\startMenu.PNG');
+startMenuImg = imread('img/startMenu.PNG');
 global introductionImg
-introductionImg = imread('img\introduction.JPG');
+introductionImg = imread('img/introduction.JPG');
 global introduction2Img
-introduction2Img = imread('img\introduction2.PNG');
+introduction2Img = imread('img/introduction2.PNG');
 global thinCrossImg
-thinCrossImg = imread('img\ThinCross.PNG');
+thinCrossImg = imread('img/ThinCross.PNG');
 global thickCrossImg
-thickCrossImg = imread('img\ThickCross.PNG');
+thickCrossImg = imread('img/ThickCross.PNG');
 global goLeftImg
-goLeftImg = imread('img\left.JPG');
+goLeftImg = imread('img/left.JPG');
 global goRightImg
-goRightImg = imread('img\right.JPG');
+goRightImg = imread('img/right.JPG');
 global nonRightImg
-nonRightImg = imread('img\nonRight.PNG');
+nonRightImg = imread('img/nonRight.PNG');
 global nonLeftImg
-nonLeftImg = imread('img\nonRight.PNG');
+nonLeftImg = imread('img/\nonRight.PNG');
 global wrongBtnImg
-wrongBtnImg = imread('img\wrongBtn.PNG');
+wrongBtnImg = imread('img/wrongBtn.PNG');
 global dontTypeImg
-dontTypeImg = imread('img\dontType.PNG');
+dontTypeImg = imread('img/dontType.PNG');
 global correctImg
-correctImg = imread('img\correct.PNG');
+correctImg = imread('img/correct.PNG');
 global resultAverageTimeImg
-resultAverageTimeImg = imread('img\resultAverageTime.PNG');
+resultAverageTimeImg = imread('img/resultAverageTime.PNG');
 global trialTimes
 trialTimes = [0.05, 0.1, 0.15, 0.2];
 global showTime
