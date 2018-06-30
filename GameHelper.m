@@ -3,7 +3,9 @@ classdef GameHelper
     end
     methods(Static)
         function uiRouter(img)
-            image(img)
+            global mainview
+            Screen('PutImage', mainview, img);
+            Screen('Flip',mainview);
         end
         function arr = startFirstBlock()
             arr = GameHelper.getFirstBlockQuiz();

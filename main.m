@@ -31,6 +31,7 @@ global showTime
 showTime = 0.6;
 global records
 records = [];
+global mainview
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % START
@@ -60,15 +61,18 @@ writeResult();
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function openApp()
-axis([0 1 0 1]);
+[w, ~]= Screen('OpenWindow',0,0, [0 0 1024 768]);
+global mainview
+mainview = w
 global startMenuImg
 GameHelper.uiRouter(startMenuImg)
 end
 
 function waitForMouseClick()
-next = 1;
-while(next ~= 0)
-    next = waitforbuttonpress;
+flag = 0;
+while flag ~= 1
+    [~,~,~,btn] = GetClicks;
+    flag = btn;
 end
 end
 
